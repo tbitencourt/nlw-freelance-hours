@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use App\Enums\ProjectStatus;
 use Database\Factories\ProjectFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
@@ -15,13 +19,6 @@ class Project extends Model
     use HasFactory;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [];
-
-    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -30,6 +27,18 @@ class Project extends Model
     {
         return [
             'tech_stack' => 'array',
+            'status' => ProjectStatus::class,
+            'ends_at' => 'datetime',
         ];
+    }
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function proposals(): HasMany
+    {
+        return $this->hasMany(Proposal::class);
     }
 }
