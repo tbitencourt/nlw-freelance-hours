@@ -12,18 +12,18 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
+     *
      * @throws RandomException
      */
     public function run(): void
     {
         User::factory(200)->create();
         User::query()->inRandomOrder()->limit(10)->get()
-            ->each(function(User $user) {
+            ->each(function (User $user) {
                 /** @var Project $project */
                 $project = Project::factory()->create(['created_by' => $user->id]);
-                Proposal::factory(random_int(4,45))->create(['project_id' => $project->id]);
+                Proposal::factory(random_int(4, 45))->create(['project_id' => $project->id]);
             });
-
 
     }
 }

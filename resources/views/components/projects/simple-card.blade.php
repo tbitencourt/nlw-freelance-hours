@@ -3,7 +3,7 @@
     <div class="flex items-start justify-between pb-4">
         <div class="flex flex-col gap-[16px]">
             <div>
-                <x-projects.status :status="$project->status" />
+                <x-projects.status :status="$project->status"/>
             </div>
             <h1 class="text-[28px] text-white leading-9">
                 {{ $project->title }}

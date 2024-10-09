@@ -16,6 +16,7 @@ class ProjectFactory extends Factory
      * Define the model's default state.
      *
      * @return array<string, mixed>
+     *
      * @throws RandomException
      */
     public function definition(): array
@@ -30,7 +31,7 @@ class ProjectFactory extends Factory
                 'react',
                 'javascript',
                 'vite',
-                'nextjs'
+                'nextjs',
             ], random_int(1, 5)),
             'created_by' => User::factory(),
         ];
