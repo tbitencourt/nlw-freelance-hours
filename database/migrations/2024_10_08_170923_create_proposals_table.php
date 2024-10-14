@@ -16,6 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string('email');
             $table->unsignedSmallInteger('hours');
+            $table->unsignedInteger('position')->nullable();
+            $table->string('position_status')->nullable();
             $table->foreignIdFor(Project::class)->constrained();
             $table->timestamps();
         });

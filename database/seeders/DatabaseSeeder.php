@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Contracts\ArrangesProposalPositions;
 use App\Models\Project;
 use App\Models\Proposal;
 use App\Models\User;
@@ -23,7 +24,13 @@ class DatabaseSeeder extends Seeder
                 /** @var Project $project */
                 $project = Project::factory()->create(['created_by' => $user->id]);
                 Proposal::factory(random_int(4, 45))->create(['project_id' => $project->id]);
+                $this->getArrangeProposalsPositions()->arrange($project);
             });
 
+    }
+
+    protected function getArrangeProposalsPositions(): ArrangesProposalPositions
+    {
+        return $this->action ??= app(ArrangesProposalPositions::class);
     }
 }
