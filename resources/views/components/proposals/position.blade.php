@@ -1,6 +1,5 @@
 @props(['position'])
 
-
 <div
     @class([
         "flex items-center justify-center rounded-full w-[40px] h-[40px]",

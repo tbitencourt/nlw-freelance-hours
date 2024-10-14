@@ -23,7 +23,7 @@ class ProjectFactory extends Factory
     {
         return [
             'title' => implode(' ', fake()->words(5)),
-            'description' => fake()->randomHtml(),
+            'description' => 'oi', //fake()->randomHtml(),
             'ends_at' => fake()->dateTimeBetween('now', '+3 days'),
             'status' => fake()->randomElement(['open', 'closed']),
             'tech_stack' => fake()->randomElements([

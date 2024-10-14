@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "387986dd4a56c3cf5219527e3977c0a8",
+    "content-hash": "9cd3c1deec2dd5caa526d68404eb4674",
     "packages": [
         {
             "name": "brick/math",
@@ -1827,16 +1827,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.5.9",
+            "version": "v3.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "d04a229058afa76116d0e39209943a8ea3a7f888"
+                "reference": "774092003edb2670615ef09f3a9fbdd335d6d0d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/d04a229058afa76116d0e39209943a8ea3a7f888",
-                "reference": "d04a229058afa76116d0e39209943a8ea3a7f888",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/774092003edb2670615ef09f3a9fbdd335d6d0d7",
+                "reference": "774092003edb2670615ef09f3a9fbdd335d6d0d7",
                 "shasum": ""
             },
             "require": {
@@ -1891,7 +1891,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.5.9"
+                "source": "https://github.com/livewire/livewire/tree/v3.5.10"
             },
             "funding": [
                 {
@@ -1899,7 +1899,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-01T12:40:06+00:00"
+            "time": "2024-10-10T20:03:38+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6266,6 +6266,65 @@
             "time": "2024-10-08T14:45:26+00:00"
         },
         {
+            "name": "lucascudo/laravel-pt-br-localization",
+            "version": "v2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lucascudo/laravel-pt-BR-localization.git",
+                "reference": "4fd68990a211a2e11ede126b72e71dc2935ce8f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lucascudo/laravel-pt-BR-localization/zipball/4fd68990a211a2e11ede126b72e71dc2935ce8f3",
+                "reference": "4fd68990a211a2e11ede126b72e71dc2935ce8f3",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lucascudo\\LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lucascudo\\LaravelPtBRLocalization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Cascudo",
+                    "email": "lucas.sisau@gmail.com"
+                }
+            ],
+            "description": "Arquivos de linguagem em Português do Brasil (pt-BR) para Laravel",
+            "homepage": "https://github.com/lucascudo/laravel-pt-br-localization",
+            "support": {
+                "issues": "https://github.com/lucascudo/laravel-pt-BR-localization/issues",
+                "source": "https://github.com/lucascudo/laravel-pt-BR-localization/tree/v2.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://buymeacoffee.com/lucasrocha",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/lucascudo",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/lucascudo/laravel-pt-br-localization",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-10-04T08:42:34+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "1.6.12",
             "source": {
@@ -6507,30 +6566,30 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "v3.3.0",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "0a7bff0d246b10040e12e4152215e12a599e742a"
+                "reference": "1e3156a5b6d20a77e5b5e39c272b53c55a3ffe6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/0a7bff0d246b10040e12e4152215e12a599e742a",
-                "reference": "0a7bff0d246b10040e12e4152215e12a599e742a",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/1e3156a5b6d20a77e5b5e39c272b53c55a3ffe6e",
+                "reference": "1e3156a5b6d20a77e5b5e39c272b53c55a3ffe6e",
                 "shasum": ""
             },
             "require": {
-                "brianium/paratest": "^7.5.6",
+                "brianium/paratest": "^7.5.7",
                 "nunomaduro/collision": "^8.4.0",
                 "nunomaduro/termwind": "^2.1.0",
                 "pestphp/pest-plugin": "^3.0.0",
                 "pestphp/pest-plugin-arch": "^3.0.0",
                 "pestphp/pest-plugin-mutate": "^3.0.5",
                 "php": "^8.2.0",
-                "phpunit/phpunit": "^11.4.0"
+                "phpunit/phpunit": "^11.4.1"
             },
             "conflict": {
-                "phpunit/phpunit": ">11.4.0",
+                "phpunit/phpunit": ">11.4.1",
                 "sebastian/exporter": "<6.0.0",
                 "webmozart/assert": "<1.11.0"
             },
@@ -6602,7 +6661,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v3.3.0"
+                "source": "https://github.com/pestphp/pest/tree/v3.3.1"
             },
             "funding": [
                 {
@@ -6614,7 +6673,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-06T18:25:27+00:00"
+            "time": "2024-10-11T08:31:24+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -7567,16 +7626,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.4.0",
+            "version": "11.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "89fe0c530133c08f7fff89d3d727154e4e504925"
+                "reference": "7875627f15f4da7e7f0823d1f323f7295a77334e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/89fe0c530133c08f7fff89d3d727154e4e504925",
-                "reference": "89fe0c530133c08f7fff89d3d727154e4e504925",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7875627f15f4da7e7f0823d1f323f7295a77334e",
+                "reference": "7875627f15f4da7e7f0823d1f323f7295a77334e",
                 "shasum": ""
             },
             "require": {
@@ -7647,7 +7706,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.4.0"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.4.1"
             },
             "funding": [
                 {
@@ -7663,7 +7722,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-10-05T08:39:03+00:00"
+            "time": "2024-10-08T15:38:37+00:00"
         },
         {
             "name": "sebastian/cli-parser",
