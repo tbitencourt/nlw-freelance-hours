@@ -11,7 +11,7 @@
                 {{ $project->title }}
             </h1>
             <div class="text-[#8C8C9A] text-[14px] leading-6">
-                Publicado {{ $project->created_at->diffForHumans() }}
+                {{ __('Published :published_at', ['published_at' => $project->created_at->diffForHumans()]) }}
             </div>
         </div>
         <div>
