@@ -5,6 +5,8 @@ namespace App\Livewire\Proposals;
 use App\Contracts\ArrangesProposalPositions;
 use App\Models\Project;
 use App\Models\Proposal;
+use App\Notifications\NewProposal;
+use App\Notifications\PerdeuMane;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Rule;
@@ -41,6 +43,7 @@ class Create extends Component
                 ['hours' => $this->hours]
             );
         $this->arrangePositions($proposal);
+        $this->project->author->notify(new NewProposal($this->project));
         $this->dispatch('proposal::created');
     }
 
@@ -54,10 +57,22 @@ class Create extends Component
         $newPosition = collect($query)->where('id', '=', $proposal->id)->first();
         $oldPosition = collect($query)->where('position', '=', $newPosition->new_position)->first();
         if ($oldPosition) {
-            $proposal->updatePositionStatus($newPosition->new_position);
             $otherProposal = Proposal::query()->findOrFail($oldPosition->id);
-            $otherProposal->updatePositionStatus($proposal->position);
+            $this->updatePositionStatus($proposal, $otherProposal, $newPosition->new_position);
             $this->getArrangeProposalsPositions()->arrange($proposal->project);
+        }
+    }
+
+    protected function updatePositionStatus(Proposal $newProposal, Proposal $oldProposal, int $newPosition): void
+    {
+        if (empty($newProposal->position) || $oldProposal->position <= $newPosition) {
+            $newProposal->update(['position_status' => 'up']);
+            $oldProposal->update(['position_status' => 'down']);
+            $oldProposal->notify(new PerdeuMane($this->project));
+        } elseif ($oldProposal->position > $newPosition) {
+            $oldProposal->update(['position_status' => 'up']);
+            $newProposal->update(['position_status' => 'down']);
+            $newProposal->notify(new PerdeuMane($this->project));
         }
     }
 

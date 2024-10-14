@@ -6,6 +6,7 @@ use Database\Factories\ProposalFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * @property int $id
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Proposal extends Model
 {
     /** @use HasFactory<ProposalFactory> */
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -36,17 +37,5 @@ class Proposal extends Model
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class);
-    }
-
-    public function updatePositionStatus(int $newPosition): void
-    {
-        if ($this->position == $newPosition) {
-            return;
-        } elseif ($this->position > $newPosition) {
-            $this->position_status = 'up';
-        } elseif ($this->position < $newPosition) {
-            $this->position_status = 'down';
-        }
-        $this->save();
     }
 }

@@ -12,7 +12,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
+ * @property string $title
+ * @property string $description
  * @property Carbon $ends_at
+ * @property ProjectStatus $status
+ * @property array $tech_stack
+ * @property User $author
  */
 class Project extends Model
 {
