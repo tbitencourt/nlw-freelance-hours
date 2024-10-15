@@ -25,6 +25,15 @@ class Project extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'status',
+    ];
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
